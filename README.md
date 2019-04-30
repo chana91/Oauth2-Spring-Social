@@ -8,7 +8,7 @@ Set up a project at https://console.developers.google.com/ and add the
 OAuth2 client ID and secret to the "google.clientId" and "google.clientSecret"
 environment properties when running the app.    
 
-Make sure you replace the following line in DriveController.java  before running
+Make sure you replace the following line in DriveController.java  before running.  
 Resource resource = new FileSystemResource("/resources/images/test.png");  // Line no: 59 : replace the file path with a valid file.
 
 
