@@ -1,0 +1,61 @@
+<div class="row"  ng-show="uploading == true">
+	<div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+</div>
+
+<div class="row">
+	<div class="row">
+	<div class="span6">
+		<h2>Google Drive</h2>
+		<form  class="form-horizontal">
+			<input ng-model="folderName" id="folderName" name="folderName" type="text"  class="input-large" autofocus="autofocus" placeholder="Enter folder name"/>
+			<button type="button" class="btn btn-success" ng-click="createFolder()">Create Folder</button>
+
+		</form>
+	</div>
+		<div class="span6">
+		<button type="button" class="btn btn-success" ng-disabled="uploading" ng-click="uploadFile()">Upload a Sample File</button>
+		</div>
+
+
+	</div>
+	<div class="row">
+		<h2>Available files</h2>
+		<table>
+			<thead>
+			<!--<tr  ng-show="false">ID</tr>-->
+			<th>Title</th>
+			<th>Last Modifying UserName</th>
+			<th>File Size</th>
+			<th>Thumbnail</th>
+			<th>Delete</th>
+
+			</thead>
+			<tbody ng-repeat="f in folders['items']" >
+			<tr>
+				<!--<td><input type="hidden" ng-model="fileID" id="fileID2" ng-show="false"  name="fileID" >{{f.id}}</input></td>-->
+				<td>{{f.title}}</td>
+				<td>{{f.lastModifyingUserName}}</td>
+				<td>{{f.fileSize}}</td>
+				<td><img src={{f.thumbnailLink}}></td>
+
+				<td><button type="button" class="btn btn-danger btn-small" ng-click="deleteFile(f.id)">Delete File</button></td>
+
+			</tr>
+
+			</tbody>
+		</table>
+
+	</div>
+
+
+		<!--<div ng-repeat="f in folders['items']">-->
+			<!--<button type="button" class="btn btn-small" ng-click="deleteTask(f.id)">Delete Folder</button>-->
+			<!--<span> {{f}}</span>-->
+		<!--</div>-->
+
+
+
+</div>
+
+
+
